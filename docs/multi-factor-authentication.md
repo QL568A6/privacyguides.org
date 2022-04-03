@@ -74,6 +74,8 @@ FIDO2/U2F has the superior security and privacy properties when compared to any 
 
     The [comparison table](https://www.nitrokey.com/#comparison) shows the features and how the Nitrokeys compare. The **Nitrokey 3** listed there will have a combined feature set.
 
+    For the models which support HOTP and TOTP, there are 3 slots for HOTP and 15 for TOTP. NitroKeys which can act as a password manager can store 16 different credentials and encrypt them using the same password as the OpenPGP interface.
+
     The Nitrokey has an open source firmware, unlike the Yubikey. The firmware on modern NitroKey models (except the **NitroKey Pro 2**) are updatable.
 
     [Visit nitrokey.com](https://www.nitrokey.com){ .md-button .md-button--primary } [Privacy Policy](https://www.nitrokey.com/data-privacy-policy){ .md-button }
@@ -81,6 +83,10 @@ FIDO2/U2F has the superior security and privacy properties when compared to any 
 !!! warning
 
     NitroKeys do **not** store HOTP/TOTP secrets in an encrypted format and are vulnerable to physical attacks.
+
+!!! warning
+
+    Resetting the OpenPGP interface on a NitroKey will also make the password database [inaccessible](https://docs.nitrokey.com/pro/factory-reset.html).
 
 ## Authenticator Apps
 
