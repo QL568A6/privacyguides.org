@@ -71,9 +71,9 @@ FIDO2/U2F has the superior security and privacy properties when compared to any 
 
     **NitroKey** has a security key capable of [FIDO2 WebAuthn](https://en.wikipedia.org/wiki/WebAuthn) called the **Nitrokey FIDO2**. For PGP support, you need to purchase one of their other keys such as the **Nitrokey Start**, **Nitrokey Pro 2** or the **Nitrokey Storage 2**.
 
-    The [comparison table](https://www.nitrokey.com/#comparison) shows the features and how the Nitrokeys compare. The Nitrokey 3 listed there will have a combined feature set.
+    The [comparison table](https://www.nitrokey.com/#comparison) shows the features and how the Nitrokeys compare. The **Nitrokey 3** listed there will have a combined feature set.
 
-    The Nitrokey has an open source firmware, unlike the Yubikey. The firmware on modern NitroKey models (except the NitroKey Pro 2) are updatable.
+    The Nitrokey has an open source firmware, unlike the Yubikey. The firmware on modern NitroKey models (except the **NitroKey Pro 2**) are updatable.
 
     [Visit nitrokey.com](https://www.nitrokey.com){ .md-button .md-button--primary } [Privacy Policy](https://www.nitrokey.com/data-privacy-policy){ .md-button }
 
