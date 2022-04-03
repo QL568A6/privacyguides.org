@@ -70,6 +70,7 @@ FIDO2/U2F has the superior security and privacy properties when compared to any 
     ![NitroKey](/assets/img/multi-factor-authentication/nitrokey.jpg){ align=right }
 
     **NitroKey** has a security key capable of [FIDO2 WebAuthn](https://en.wikipedia.org/wiki/WebAuthn) called the **Nitrokey FIDO2**. For PGP support, you need to purchase one of their other keys such as the **Nitrokey Start**, **Nitrokey Pro 2** or the **Nitrokey Storage 2**.
+    Some NitroKeys can act as a password manager storing 16 credentials as well.
 
     The [comparison table](https://www.nitrokey.com/#comparison) shows the features and how the Nitrokeys compare. The Nitrokey 3 listed there will have a combined feature set.
 
@@ -79,7 +80,7 @@ FIDO2/U2F has the superior security and privacy properties when compared to any 
 
 !!! warning
 
-    NitroKey does **not** store HTOP/TOTP secrets in encrypted format and is vulnerable to physical attacks.
+    NitroKey does **not** store HOTP/TOTP secrets in encrypted format and is vulnerable to physical attacks.
 
 ## Authenticator Apps
 ==Generally speaking, TOTP software authenticator apps are going to be the best bet for most people.== They provide a significantly higher level of security than just SMS or Push Notifications, while remaining very convenient for most people who keep their phones with them at all times.
