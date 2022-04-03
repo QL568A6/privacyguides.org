@@ -10,13 +10,13 @@ The idea behind 2FA is that even if a hacker is able to figure out your password
 
 ## MFA Method Comparison
 
-### Email 2FA and SMS 2FA
-==**Emailed 2FA** and **SMS 2FA** are better than nothing at all, but only marginally.== Getting a code over SMS or Email takes away from the "something you *have*" idea, because there are a variety of ways a hacker could take over your phone number or gain access to your emails without having physical access to any of your devices at all! 
+### Email or SMS 2FA
+==**Email** or **SMS 2FA** are better than nothing at all, but only marginally.== Getting a code over SMS or Email takes away from the "something you *have*" idea, because there are a variety of ways a hacker could take over your phone number or gain access to your emails without having physical access to any of your devices at all! 
 
 To make matters worse, if a hacker gains access to your email, they typically would be able to use it to both reset your password and receive the second factor authentication code, giving them full access to your account. ==If you have to choose between SMS 2FA and Email 2FA, and if you do not mind giving out your phone number, SMS is preferable.==
 
 ### Push Notifications
-**Push Notifications** take the form of a message being sent to an app on your phone asking you to confirm new account logins. This is a lot better than SMS or Email, since an attacker typically wouldn't be able to get these push notifications without having an already logged-in device, thus requiring them to compromise your devices first. However, they can be easy to click through and accept accidentally, and are typically sent to *all* your devices at once, widening the availability of the 2FA code if you have many devices. ==This solution is also generally a cloud based solution, so you are reliant on the company you have an account with to implement their custom solution securely and you have to fully git push --forcetrust them to not compromise your second factor authentication or to profile you.== Finally, it requires you to keep an app for every login you have on your mobile device, which may or may not be convenient to you.
+**Push Notifications** take the form of a message being sent to an app on your phone asking you to confirm new account logins. This is a lot better than SMS or Email, since an attacker typically wouldn't be able to get these push notifications without having an already logged-in device, thus requiring them to compromise your devices first. However, they can be easy to click through and accept accidentally, and are typically sent to *all* your devices at once, widening the availability of the 2FA code if you have many devices. ==This solution is also generally a cloud based solution, so you are reliant on the company you have an account with to implement their custom solution securely and you have to fully trust them to not compromise your second factor authentication or to profile you.== Finally, it requires you to keep an app for every login you have on your mobile device, which may or may not be convenient to you.
 
 ### Time-based One-time Password (TOTP)
 **TOTP** is the most common form of two factor authentication. The service shares a secret code with you (a seed) that you would be then storing on your **authenticator apps** or **hardware security keys**. The six digits code is derived from the seed and the current time, making it difficult to duplicate the codes so they cannot be reproduced by a hacker later, even if they briefly had access to your current six digits code.
@@ -34,6 +34,7 @@ When compared to TOTP, Yubico OTP has some pros and cons. Unlike TOTP, user woul
 
 If your threat model requires you to have different identities on different websites, **do not** use Yubico OTP with the same hardware security key across those websites. 
 
+### FIDO2/U2F
 **FIDO2/U2F** is the most secure and private form of second factor authentication.
 
 ## Hardware Security Keys
