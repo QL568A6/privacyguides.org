@@ -82,7 +82,6 @@ FIDO2/U2F has the superior security and privacy properties when compared to any 
     NitroKeys do **not** store HOTP/TOTP secrets in an encrypted format and are vulnerable to physical attacks.
 
 ## Authenticator Apps
-==Generally speaking, TOTP software authenticator apps are going to be the best bet for most people.== They provide a significantly higher level of security than just SMS or Push Notifications, while remaining very convenient for most people who keep their phones with them at all times.
 
 Authenticator Apps implement a security standard adopted by the Internet Engineering Task Force (IETF) called **Time-based One-time Passwords**, or **TOTP**. This is a method where websites share a secret with you which is used by your authenticator app to generate a six (usually) digit code based on the current time, which you enter while logging in for the website to check. Typically these codes are regenerated every 30 seconds, and once a new code is generated the old one becomes useless. Even if a hacker gets one six-digit code, there is no way for them to reverse that code to get the original secret, or otherwise be able to predict what any future codes might be.
 
