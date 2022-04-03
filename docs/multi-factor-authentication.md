@@ -35,7 +35,19 @@ When compared to TOTP, Yubico OTP has some pros and cons. Unlike TOTP, user woul
 ==If your threat model requires you to have different identities on different websites, **do not** use Yubico OTP with the same hardware security key across those websites.==
 
 ### FIDO2/U2F
-**FIDO2/U2F** is the most secure and private form of second factor authentication.
+**FIDO2/U2F** is the most secure and private form of second factor authentication. While the user experience is similar to Yubico OTP, the key does not type out a one-time password and validate with a third party server. Rather, it uses public key authentication between the website and the key itself. Certain websites can also request that the key's PIN is entered before any authentication can happen.
+
+A detailed explanation on how the protocol works is explained at an RSA conference:
+
+<iframe width="100%" style="height:50vh"
+  src="https://www.youtube-nocookie.com/embed/aMo4ZlWznao"
+  title="How FIDO2 and WebAuthn Stop Account Takeovers"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+FIDO2/U2F has the superior security and privacy properties when compared to any multi factor authentication protocols. The public key authentication done by FIDO2/U2F is more secure than shared secrets that is used in Yubico OTP and TOTP. FIDO2/U2F does not use any public ID, so the key is not identifiable across different websites like Yubico OTP. It also does not use any third party cloud server for authentication, everything is done between the key and the website the user is logging into. Even better, FIDO2/U2F also uses a counter like Yubico OTP to help detect key cloning. ==If a website or service supports FIDO2/U2F for the authentication, it is highly recommended that you use it over any other form of 2FA.==
 
 ## Hardware Security Keys
 
@@ -64,6 +76,10 @@ When compared to TOTP, Yubico OTP has some pros and cons. Unlike TOTP, user woul
     The Nitrokey has an open source firmware, unlike the Yuibkey.
 
     [Visit nitrokey.com](https://www.nitrokey.com){ .md-button .md-button--primary } [Privacy Policy](https://www.nitrokey.com/data-privacy-policy){ .md-button }
+
+!!! warning
+
+    NitroKey does **not** store HTOP/TOTP secrets in encrypted format and is vulnerable to physical attacks.
 
 ## Authenticator Apps
 ==Generally speaking, TOTP software authenticator apps are going to be the best bet for most people.== They provide a significantly higher level of security than just SMS or Push Notifications, while remaining very convenient for most people who keep their phones with them at all times.
