@@ -34,8 +34,8 @@ When compared to TOTP, Yubico OTP has some pros and cons. Unlike TOTP, user woul
 
 ==If your threat model requires you to have different identities on different websites, **do not** use Yubico OTP with the same hardware security key across those websites.==
 
-### FIDO2/U2F
-**FIDO2/U2F** is the most secure and private form of second factor authentication. While the user experience is similar to Yubico OTP, the key does not type out a one-time password and validate with a third party server. Rather, it uses public key authentication between the website and the key itself. Certain websites can also request that the key's PIN is entered before any authentication can happen.
+### FIDO2 / U2F
+**FIDO2 / U2F** is the most secure and private form of second factor authentication. While the user experience is similar to Yubico OTP, the key does not type out a one-time password and validate with a third party server. Rather, it uses public key authentication between the website and the key itself. Certain websites can also request that the key's PIN is entered before any authentication can happen.
 
 A detailed explanation on how the protocol works is explained at an RSA conference:
 
@@ -47,7 +47,7 @@ A detailed explanation on how the protocol works is explained at an RSA conferen
   allowfullscreen>
 </iframe>
 
-FIDO2/U2F has the superior security and privacy properties when compared to any multi factor authentication protocols. The public key authentication done by FIDO2/U2F is more secure than shared secrets that is used in Yubico OTP and TOTP. FIDO2/U2F does not use any public ID, so the key is not identifiable across different websites like Yubico OTP. It also does not use any third party cloud server for authentication, everything is done between the key and the website the user is logging into. Even better, FIDO2/U2F also uses a counter like Yubico OTP to help detect key cloning. ==If a website or service supports FIDO2/U2F for the authentication, it is highly recommended that you use it over any other form of 2FA.==
+FIDO2 / U2F has the superior security and privacy properties when compared to any multi factor authentication protocols. The public key authentication done by FIDO2/U2F is more secure than shared secrets that is used in Yubico OTP and TOTP. FIDO2/U2F does not use any public ID, so the key is not identifiable across different websites like Yubico OTP. It also does not use any third party cloud server for authentication, everything is done between the key and the website the user is logging into. Even better, FIDO2/U2F also uses a counter like Yubico OTP to help detect key cloning. ==If a website or service supports FIDO2/U2F for the authentication, it is highly recommended that you use it over any other form of 2FA.==
 
 ## Hardware Security Keys
 
@@ -57,7 +57,11 @@ FIDO2/U2F has the superior security and privacy properties when compared to any 
 
     ![YubiKeys](/assets/img/multi-factor-authentication/yubikey.png)
 
-    The **Yuibkey** was one of the first security keys. It has a wide range of features such as for [Universal 2nd Factor (U2F)](https://en.wikipedia.org/wiki/Universal_2nd_Factor), [FIDO2 WebAuthn](https://en.wikipedia.org/wiki/WebAuthn), PGP and One-Time-Pad (OTP) authentication. One of the benefits of this key is that one key can do everything.
+    The **Yuibkey** was one of the most popular security keys. It has a wide range of features such as for [Universal 2nd Factor (U2F)](https://en.wikipedia.org/wiki/Universal_2nd_Factor), [FIDO2 WebAuthn](https://en.wikipedia.org/wiki/WebAuthn), [Yubico OTP](https://developers.yubico.com/OTP/), [PIV](https://en.wikipedia.org/wiki/FIPS_201), [OpenPGP](https://developers.yubico.com/PGP/), [TOTP and HOTP](https://developers.yubico.com/OATH/) authentication. One of the benefits of this key is that one key can do most things.
+
+    Yubikeys can be programmed using the [Yubikey Manager](https://www.yubico.com/support/download/yubikey-manager/) or [Yubikey Personalization Tools](https://www.yubico.com/support/download/yubikey-personalization-tools/). For managing TOTP codes, the user can use the [Yubico Authenticator](https://www.yubico.com/products/yubico-authenticator/).
+
+    Yubikeys store HOTP and TOTP secrets encrypted on the device and never expose them to the devices they are plugged into.
 
     [Visit yubico.com](https://www.yubico.com){ .md-button .md-button--primary } [Privacy Policy](https://www.yubico.com/support/terms-conditions/privacy-notice){ .md-button }
 
@@ -76,7 +80,7 @@ FIDO2/U2F has the superior security and privacy properties when compared to any 
 
     For the models which support HOTP and TOTP, there are 3 slots for HOTP and 15 for TOTP. Nitrokeys which can act as a password manager can store 16 different credentials and encrypt them using the same password as the OpenPGP interface.
 
-    The Nitrokey Pro 2, Nitrokey Storage 2, and the upcoming Nitrokey 3 supports system integrity verification for laptops with the (Coreboot)[https://www.coreboot.org/] + (Heads)[https://osresearch.net/] firmware. Purism's (Librem Key)[https://puri.sm/products/librem-key/] is a rebranded NitroKey Pro 2 with similar firmware and can also be used for the same purposes.
+    The Nitrokey Pro 2, Nitrokey Storage 2, and the upcoming Nitrokey 3 supports system integrity verification for laptops with the [Coreboot](https://www.coreboot.org/) + [Heads](https://osresearch.net/) firmware. Purism's [Librem Key](https://puri.sm/products/librem-key/) is a rebranded NitroKey Pro 2 with similar firmware and can also be used for the same purposes.
 
     The Nitrokey has an open source firmware, unlike the Yubikey. The firmware on modern NitroKey models (except the **NitroKey Pro 2**) are updatable.
 
