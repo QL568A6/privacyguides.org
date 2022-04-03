@@ -47,7 +47,16 @@ A detailed explanation on how the protocol works is explained at an RSA conferen
   allowfullscreen>
 </iframe>
 
-FIDO2 / U2F has the superior security and privacy properties when compared to any multi factor authentication protocols. The public key authentication done by FIDO2/U2F is more secure than shared secrets that is used in Yubico OTP and TOTP. FIDO2/U2F does not use any public ID, so the key is not identifiable across different websites like Yubico OTP. It also does not use any third party cloud server for authentication, everything is done between the key and the website the user is logging into. Even better, FIDO2/U2F also uses a counter like Yubico OTP to help detect key cloning. ==If a website or service supports FIDO2/U2F for the authentication, it is highly recommended that you use it over any other form of 2FA.==
+FIDO2 / U2F has the superior security and privacy properties when compared to any multi factor authentication protocols. The public key authentication done by FIDO2/U2F is more secure than shared secrets that is used in Yubico OTP and TOTP. FIDO2/U2F does not use any public ID, so the key is not identifiable across different websites like Yubico OTP. It also does not use any third party cloud server for authentication, everything is done between the key and the website the user is logging into. Even better, FIDO2 / U2F also uses a counter like Yubico OTP to help detect key cloning. ==If a website or service supports FIDO2 / U2F for the authentication, it is highly recommended that you use it over any other form of 2FA.==
+
+## General Recommendations
+When configuring second factor authentication, keep in mind that it is only as secure as your weakest authentication method you use. Thus, it is important that you only use the best 2FA method available. For instance, if you are already using TOTP, you should explicitly disable Email and SMS 2FA. Likewise, if you are already using FIDO2 / U2F, you should not be using Yubico OTP or TOTP on your account.
+
+You should always have backups for your second factor authentication. Hardware security keys can get lost, stolen, or simply stop working over time. Thus, it is highly recommended that you have a pair of hardware security keys with the same access to your accounts instead of just one. When using TOTP with an authenticator app, be sure to back up your recovery keys, the app itself, or copy the seed to another instance of the app on a different phone.
+
+When buying a security key, it is important that you change the default credentials, setup password protection for the key, and enable touch confirmation if your key supports such feature. Products such as the [Yubikey](#yubikey) have multiple interfaces with seperate credentials for each one of them, so you should go over each interface and set up protection as well.
+
+
 
 ## Hardware Security Keys
 
