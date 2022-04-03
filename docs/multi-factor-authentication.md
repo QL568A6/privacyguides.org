@@ -32,7 +32,7 @@ When the user login to a website, all they need to do is to physically touch the
 
 When compared to TOTP, Yubico OTP has some pros and cons. Unlike TOTP, user would quickly recognize that their second factor authentication is compromised should an attacker manage to clone their hardware security key, as the counter stored on their security key would be smaller than what is stored on a server and their login would be rejected. However, this is still a cloud based service, and still need to trust Yubico to set up their servers securely and to not profile the user. The public ID associated with Yubico OTP is reused on every website and can be another avenue for third parties to profile the user. The number of Yubico OTP a key can generate is limited to 32767 before it needs a reset.
 
-If your threat model requires you to have different identities on different websites, **do not** use Yubico OTP with the same hardware security key across those websites. 
+==If your threat model requires you to have different identities on different websites, **do not** use Yubico OTP with the same hardware security key across those websites.==
 
 ### FIDO2/U2F
 **FIDO2/U2F** is the most secure and private form of second factor authentication.
