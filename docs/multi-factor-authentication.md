@@ -6,7 +6,7 @@ icon: 'material/two-factor-authentication'
 
 **Two-Factor Authentication** (also known as **2FA**, **Multi-Factor Authentication**, or **MFA**) is a security mechanism that requires additional steps beyond simply your username/email and password. If you've ever had to enter a 6-digit code sent to your phone to log in to a website, that's an example of 2FA.
 
-The idea behind 2FA is that even if a hacker is able to figure out your password (something you *know*), they will still need a device you own like your phone (something you *have*) in order to generate the code needed to log in to your account. 2FA methods vary in security based on this premise: The more difficult it is for an attacker to gain access to your 2FA method, the better. Examples of 2FA methods from strongest to weakest are Email codes, SMS codes, Push Notifications, Time-based One-time Password (TOTP), Yubico OTP, and FIDO2/U2F.
+The idea behind 2FA is that even if a hacker is able to figure out your password (something you *know*), they will still need a device you own like your phone (something you *have*) in order to generate the code needed to log in to your account. 2FA methods vary in security based on this premise: The more difficult it is for an attacker to gain access to your 2FA method, the better. Examples of 2FA methods from weakest to strongest are Email codes, SMS codes, Push Notifications, Time-based One-time Password (TOTP), Yubico OTP, and FIDO2/U2F.
 
 ## MFA Method Comparison
 
@@ -59,9 +59,9 @@ FIDO2 / U2F has the superior security and privacy properties when compared to an
 
     The **Yuibkey** was one of the most popular security keys. It has a wide range of features such as for [Universal 2nd Factor (U2F)](https://en.wikipedia.org/wiki/Universal_2nd_Factor), [FIDO2 WebAuthn](https://en.wikipedia.org/wiki/WebAuthn), [Yubico OTP](https://developers.yubico.com/OTP/), [PIV](https://en.wikipedia.org/wiki/FIPS_201), [OpenPGP](https://developers.yubico.com/PGP/), [TOTP and HOTP](https://developers.yubico.com/OATH/) authentication. One of the benefits of this key is that one key can do most things.
 
-    Yubikeys can be programmed using the [Yubikey Manager](https://www.yubico.com/support/download/yubikey-manager/) or [Yubikey Personalization Tools](https://www.yubico.com/support/download/yubikey-personalization-tools/). For managing TOTP codes, the user can use the [Yubico Authenticator](https://www.yubico.com/products/yubico-authenticator/).
+    Yubikeys can be programmed using the [Yubikey Manager](https://www.yubico.com/support/download/yubikey-manager/) or [Yubikey Personalization Tools](https://www.yubico.com/support/download/yubikey-personalization-tools/). For managing TOTP codes, the user can use the [Yubico Authenticator](https://www.yubico.com/products/yubico-authenticator/). All of Yubico's clients are open source.
 
-    Yubikeys store HOTP and TOTP secrets encrypted on the device and never expose them to the devices they are plugged into.
+    Yubikeys store HOTP and TOTP secrets encrypted on the device and never expose them to the devices they are plugged into. Once a seed is given to the Yubico Authenticator, it will only give out the six-digit codes, but it will never give out the actual seed again.
 
     [Visit yubico.com](https://www.yubico.com){ .md-button .md-button--primary } [Privacy Policy](https://www.yubico.com/support/terms-conditions/privacy-notice){ .md-button }
 
