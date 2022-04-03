@@ -64,17 +64,19 @@ FIDO2/U2F has the superior security and privacy properties when compared to any 
 !!! warning
     The firmware of Yubikeys are not open source and are not updatable. If you want features in newer firmware versions, or if there is a vulnerability in the firmware version you are using, you would need to purchase a new key.
 
-### NitroKey
+### Nitrokey / Librem Key
 
 !!! recommendation
 
-    ![NitroKey](/assets/img/multi-factor-authentication/nitrokey.jpg){ align=right }
+    ![Nitrokey](/assets/img/multi-factor-authentication/nitrokey.jpg){ align=right }
 
-    **NitroKey** has a security key capable of [FIDO2 WebAuthn](https://en.wikipedia.org/wiki/WebAuthn) called the **Nitrokey FIDO2**. For PGP support, you need to purchase one of their other keys such as the **Nitrokey Start**, **Nitrokey Pro 2** or the **Nitrokey Storage 2**.
+    **Nitrokey** has a security key capable of [FIDO2 WebAuthn](https://en.wikipedia.org/wiki/WebAuthn) called the **Nitrokey FIDO2**. For PGP support, you need to purchase one of their other keys such as the **Nitrokey Start**, **Nitrokey Pro 2** or the **Nitrokey Storage 2**.
 
     The [comparison table](https://www.nitrokey.com/#comparison) shows the features and how the Nitrokeys compare. The **Nitrokey 3** listed there will have a combined feature set.
 
-    For the models which support HOTP and TOTP, there are 3 slots for HOTP and 15 for TOTP. NitroKeys which can act as a password manager can store 16 different credentials and encrypt them using the same password as the OpenPGP interface.
+    For the models which support HOTP and TOTP, there are 3 slots for HOTP and 15 for TOTP. Nitrokeys which can act as a password manager can store 16 different credentials and encrypt them using the same password as the OpenPGP interface.
+
+    The Nitrokey Pro 2, Nitrokey Storage 2, and the upcoming Nitrokey 3 supports system integrity verification for laptops with the (Coreboot)[https://www.coreboot.org/] + (Heads)[https://osresearch.net/] firmware. Purism's (Librem Key)[https://puri.sm/products/librem-key/] is a rebranded NitroKey Pro 2 with similar firmware and can also be used for the same purposes.
 
     The Nitrokey has an open source firmware, unlike the Yubikey. The firmware on modern NitroKey models (except the **NitroKey Pro 2**) are updatable.
 
@@ -82,11 +84,11 @@ FIDO2/U2F has the superior security and privacy properties when compared to any 
 
 !!! warning
 
-    NitroKeys do **not** store HOTP/TOTP secrets in an encrypted format and are vulnerable to physical attacks.
+    Nitrokeys do **not** store HOTP/TOTP secrets in an encrypted format and are vulnerable to physical attacks.
 
 !!! warning
 
-    Resetting the OpenPGP interface on a NitroKey will also make the password database [inaccessible](https://docs.nitrokey.com/pro/factory-reset.html).
+    Resetting the OpenPGP interface on a Nitrokey will also make the password database [inaccessible](https://docs.nitrokey.com/pro/factory-reset.html).
 
 ## Authenticator Apps
 
