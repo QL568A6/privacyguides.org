@@ -72,7 +72,7 @@ If you have to use Email for 2FA, make sure that the email account itself is sec
 
     Yubikeys can be programmed using the [Yubikey Manager](https://www.yubico.com/support/download/yubikey-manager/) or [Yubikey Personalization Tools](https://www.yubico.com/support/download/yubikey-personalization-tools/). For managing TOTP codes, the user can use the [Yubico Authenticator](https://www.yubico.com/products/yubico-authenticator/). All of Yubico's clients are open source.
 
-    For models which support HOTP and TOTP, there 2 slots in the OTP interface which could be used for HOTP and 32 slots to store TOTP secrets. These secrets are stored encrypted on the key and never expose them to the devices they are plugged into. Once a seed is given to the Yubico Authenticator, it will only give out the six-digit codes, but never the actual seed. This model helps limit what an attacker can do if they compromise one of the devices running the Yubico Authenticator and make the Yubikey resistant to a physical attacker.
+    For models which support HOTP and TOTP, there 2 slots in the OTP interface which could be used for HOTP and 32 slots to store TOTP secrets. These secrets are stored encrypted on the key and never expose them to the devices they are plugged into. Once a seed is given to the Yubico Authenticator, it will only give out the six-digit codes, but never the actual seed. This security model helps limit what an attacker can do if they compromise one of the devices running the Yubico Authenticator and make the Yubikey resistant to a physical attacker.
 
     [Visit yubico.com](https://www.yubico.com){ .md-button .md-button--primary } [Privacy Policy](https://www.yubico.com/support/terms-conditions/privacy-notice){ .md-button }
 
