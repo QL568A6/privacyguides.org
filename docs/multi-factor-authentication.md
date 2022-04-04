@@ -68,6 +68,8 @@ If you have to use Email for 2FA, make sure that the email account itself is sec
 
     The **Yuibkey** was one is one of the most popular security keys. Some Yubikey models have a wide range of features such as for [Universal 2nd Factor (U2F)](https://en.wikipedia.org/wiki/Universal_2nd_Factor), [FIDO2 WebAuthn](https://en.wikipedia.org/wiki/WebAuthn), [Yubico OTP](https://developers.yubico.com/OTP/), [PIV](https://en.wikipedia.org/wiki/FIPS_201), [OpenPGP](https://developers.yubico.com/PGP/), [TOTP and HOTP](https://developers.yubico.com/OATH/) authentication. One of the benefits of these models is that one key can do most things.
 
+    The [comparison table](https://www.yubico.com/store/compare/) shows the features and how the Yubikeykeys compare. We highly recommend that you select keys from the Yubikey 5 Series.
+
     Yubikeys can be programmed using the [Yubikey Manager](https://www.yubico.com/support/download/yubikey-manager/) or [Yubikey Personalization Tools](https://www.yubico.com/support/download/yubikey-personalization-tools/). For managing TOTP codes, the user can use the [Yubico Authenticator](https://www.yubico.com/products/yubico-authenticator/). All of Yubico's clients are open source.
 
     For models which support HOTP and TOTP, there 2 slots in the OTP interface which could be used for HOTP and 32 slots to store TOTP secrets. These secrets are stored encrypted on the key and never expose them to the devices they are plugged into. Once a seed is given to the Yubico Authenticator, it will only give out the six-digit codes, but never the actual seed. This model helps limit what an attacker can do if they compromise one of the devices running the Yubico Authenticator and make the Yubikey resistant to a physical attacker.
@@ -87,6 +89,8 @@ If you have to use Email for 2FA, make sure that the email account itself is sec
 
     The [comparison table](https://www.nitrokey.com/#comparison) shows the features and how the Nitrokeys compare. The **Nitrokey 3** listed there will have a combined feature set.
 
+    Nitrokeys can be configured using the [Nitrokey app](https://www.nitrokey.com/download).
+
     For the models which support HOTP and TOTP, there are 3 slots for HOTP and 15 for TOTP. Nitrokeys which can act as a password manager can store 16 different credentials and encrypt them using the same password as the OpenPGP interface.
 
     The Nitrokey Pro 2, Nitrokey Storage 2, and the upcoming Nitrokey 3 supports system integrity verification for laptops with the [Coreboot](https://www.coreboot.org/) + [Heads](https://osresearch.net/) firmware. Purism's [Librem Key](https://puri.sm/products/librem-key/) is a rebranded NitroKey Pro 2 with similar firmware and can also be used for the same purposes.
@@ -102,6 +106,10 @@ If you have to use Email for 2FA, make sure that the email account itself is sec
 !!! attention
 
     Resetting the OpenPGP interface on a Nitrokey will also make the password database [inaccessible](https://docs.nitrokey.com/pro/factory-reset.html).
+
+!!! attention
+
+    The Nitrokey app, while compatible with Librem Keys, requires `libnitrokey` version 3.6 or above to recognize them. Currently, the package is outdated on Windows, macOS, and most Linux distributions' repository, so you will likely have to compile the Nitrokey app yourself to get it working with the Librem Key. On Linux, you can obtain an up-to-date version from [Flathub](https://flathub.org/apps/details/com.nitrokey.nitrokey-app).
 
 ## Authenticator Apps
 
