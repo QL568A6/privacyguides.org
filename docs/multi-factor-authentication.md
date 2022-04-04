@@ -141,7 +141,7 @@ We highly recommend that you use mobile TOTP apps instead of desktop alternative
 
 ### Windows
 
-Yubico has a dedicated [Credential Provider](https://docs.microsoft.com/en-us/windows/win32/secauthn/credential-providers-in-windows) that adds Challenge-Response (HOTP) authentication for the username + password login flow for local Windows accounts. If you have a Yubikey, it is highly recommended that you follow this [guide](https://support.yubico.com/hc/en-us/articles/360013708460-Yubico-Login-for-Windows-Configuration-Guide) and set up second factor authentication for your Windows computer.
+Yubico has a dedicated [Credential Provider](https://docs.microsoft.com/en-us/windows/win32/secauthn/credential-providers-in-windows) that adds Challenge-Response (HOTP) authentication for the username + password login flow for local Windows accounts. If you have a Yubikey with HOTP support, it is highly recommended that you follow this [guide](https://support.yubico.com/hc/en-us/articles/360013708460-Yubico-Login-for-Windows-Configuration-Guide) and set up second factor authentication for your Windows computer.
 
 ### macOS
 
@@ -156,7 +156,18 @@ After your smartcard/security key is set up, we highly recommend running `sudo d
 !!! warning
     If the hostname of your system changes (such as due to DHCP), you would be unable to login. It is vital that you setup a proper hostname for your computer before following this guide.
 
-The pam_u2f module on Linux can provide two factor authentication for user login on most popular Linux distributions. If you have a hardware security key that supports U2F, we highly recommend that you follow the [Yubico's documentation](https://support.yubico.com/hc/en-us/articles/360016649099-Ubuntu-Linux-Login-Guide-U2F) and setup second factor authentication for your Linux machine.
+The `pam_u2f` module on Linux can provide two factor authentication for user login on most popular Linux distributions. If you have a hardware security key that supports U2F, we highly recommend that you follow the [Yubico's documentation](https://support.yubico.com/hc/en-us/articles/360016649099-Ubuntu-Linux-Login-Guide-U2F) and setup second factor authentication for your Linux machine. This guide does **not** apply to Qubes OS.
 
-### Qubes
+### Qubes OS
+
+Qubes OS has support for Challenge-Response (HOTP) authentication with Yubikeys. If you have a Yubikey with HOTP support, we highly recommend that you follow [Qubes OS's documentation](https://www.qubes-os.org/doc/yubikey/) and setup second factor authentication for your Qubes OS machine.
+
+### SSH
+
+#### Hardware security keys
+SSH 2FA could be set up using multiple different authentication methods that are popular with hardware security keys. We recommend that you check out Yubico's [documentation](https://developers.yubico.com/SSH/) on how to set this up.
+
+#### Time-based One-time Password (TOTP)
+SSH 2FA can also be set up using TOTP. We recommend that you follow Digital Ocean's [documentation](https://www.digitalocean.com/community/tutorials/how-to-set-up-multi-factor-authentication-for-ssh-on-ubuntu-16-04) on how to set this up.
+
 
