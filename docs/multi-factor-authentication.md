@@ -70,7 +70,7 @@ If you have to use Email for 2FA, make sure that the email account itself is sec
 
     Yubikeys can be programmed using the [Yubikey Manager](https://www.yubico.com/support/download/yubikey-manager/) or [Yubikey Personalization Tools](https://www.yubico.com/support/download/yubikey-personalization-tools/). For managing TOTP codes, the user can use the [Yubico Authenticator](https://www.yubico.com/products/yubico-authenticator/). All of Yubico's clients are open source.
 
-    For models which support HOTP and TOTP, there 2 slots in the OTP interface which could be used for HOTP and 32 slots to store TOTP secrets. These secrets are stored encrypted on the key and never expose them to the devices they are plugged into. Once a seed is given to the Yubico Authenticator, it will only give out the six-digit codes, but never give out the actual seed. This model helps limit what an attacker can do if they compromise one of the devices running the Yibico Authenticator and make the Yubikey resistant to a physical attacker.
+    For models which support HOTP and TOTP, there 2 slots in the OTP interface which could be used for HOTP and 32 slots to store TOTP secrets. These secrets are stored encrypted on the key and never expose them to the devices they are plugged into. Once a seed is given to the Yubico Authenticator, it will only give out the six-digit codes, but never the actual seed. This model helps limit what an attacker can do if they compromise one of the devices running the Yubico Authenticator and make the Yubikey resistant to a physical attacker.
 
     [Visit yubico.com](https://www.yubico.com){ .md-button .md-button--primary } [Privacy Policy](https://www.yubico.com/support/terms-conditions/privacy-notice){ .md-button }
 
@@ -136,3 +136,18 @@ We highly recommend that you use mobile TOTP apps instead of desktop alternative
     
     **Downloads:**
     - [:fontawesome-brands-app-store-ios: App Store](https://apps.apple.com/us/app/raivo-otp/id1459042137)
+
+## More places to setup 2FA
+
+### Windows
+
+Yubico has a dedicated [Credential Provider](https://docs.microsoft.com/en-us/windows/win32/secauthn/credential-providers-in-windows) that adds Challenge-Response (HOTP) authentication for the username + password login flow for local Windows accounts. If you have a Yubikey, it is highly recommended that you follow this [guide](https://support.yubico.com/hc/en-us/articles/360013708460-Yubico-Login-for-Windows-Configuration-Guide) and set up second factor authentication for your Windows computer.
+
+### macOS
+
+macOS has [native support](https://support.apple.com/guide/deployment/intro-to-smart-card-integration-depd0b888248/web) for authentication with smart cards (PIV). If you have a smartcard or a hardware security key that supports the PIV interface such as the Yubikey, we highly recommend that you follow your smartcard/hardware security vendor's documentation and set up second factor authentication for your macOS computer.
+
+A detailed guide on how to set this up with a Yubikey can be found [here](https://support.yubico.com/hc/en-us/articles/360016649059).
+
+After your smartcard/security key is set up, we highly recommend running `sudo defaults write /Library/Preferences/com.apple.loginwindow DisableFDEAutoLogin -bool YES` in the terminal to prevent the 2FA bypass when the computer boots up.
+
