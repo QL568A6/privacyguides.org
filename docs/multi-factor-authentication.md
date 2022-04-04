@@ -56,7 +56,7 @@ You should always have backups for your second factor authentication. Hardware s
 
 When buying a security key, it is important that you change the default credentials, setup password protection for the key, and enable touch confirmation if your key supports such feature. Products such as the [Yubikey](#yubikey) have multiple interfaces with seperate credentials for each one of them, so you should go over each interface and set up protection as well.
 
-
+If you have to use Email for 2FA, make sure that the email account itself is secured with a proper 2FA method. Likewise, if you use SMS 2FA, use a carrier who will not switch your phone number to a new SIM card without account access or use a dedicated VOIP number from a provider with similar security to avoid a [SIM swap](https://en.wikipedia.org/wiki/SIM_swap_scam) attack.
 
 ## Hardware Security Keys
 
@@ -74,7 +74,7 @@ When buying a security key, it is important that you change the default credenti
 
     [Visit yubico.com](https://www.yubico.com){ .md-button .md-button--primary } [Privacy Policy](https://www.yubico.com/support/terms-conditions/privacy-notice){ .md-button }
 
-!!! warning
+!!! attention
     The firmware of Yubikeys are not open source and are not updatable. If you want features in newer firmware versions, or if there is a vulnerability in the firmware version you are using, you would need to purchase a new key.
 
 ### Nitrokey / Librem Key
@@ -99,13 +99,15 @@ When buying a security key, it is important that you change the default credenti
 
     Nitrokeys do **not** store HOTP/TOTP secrets in an encrypted format and are vulnerable to physical attacks.
 
-!!! warning
+!!! attention
 
     Resetting the OpenPGP interface on a Nitrokey will also make the password database [inaccessible](https://docs.nitrokey.com/pro/factory-reset.html).
 
 ## Authenticator Apps
 
 Authenticator Apps implement a security standard adopted by the Internet Engineering Task Force (IETF) called **Time-based One-time Passwords**, or **TOTP**. This is a method where websites share a secret with you which is used by your authenticator app to generate a six (usually) digit code based on the current time, which you enter while logging in for the website to check. Typically these codes are regenerated every 30 seconds, and once a new code is generated the old one becomes useless. Even if a hacker gets one six-digit code, there is no way for them to reverse that code to get the original secret, or otherwise be able to predict what any future codes might be.
+
+We highly recommend that you use mobile TOTP apps instead of desktop alternatives as Android and IOS have better security and app isolation than most desktop operating systems.
 
 ### Aegis Authenticator
 
