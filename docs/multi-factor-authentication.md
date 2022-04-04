@@ -141,7 +141,7 @@ We highly recommend that you use mobile TOTP apps instead of desktop alternative
 
 ### Windows
 
-Yubico has a dedicated [Credential Provider](https://docs.microsoft.com/en-us/windows/win32/secauthn/credential-providers-in-windows) that adds Challenge-Response (HOTP) authentication for the username + password login flow for local Windows accounts. If you have a Yubikey with HOTP support, it is highly recommended that you follow this [guide](https://support.yubico.com/hc/en-us/articles/360013708460-Yubico-Login-for-Windows-Configuration-Guide) and set up second factor authentication for your Windows computer.
+Yubico has a dedicated [Credential Provider](https://docs.microsoft.com/en-us/windows/win32/secauthn/credential-providers-in-windows) that adds Challenge-Response authentication for the username + password login flow for local Windows accounts. If you have a Yubikey with Challenge-Response authentication support, it is highly recommended that you follow this [guide](https://support.yubico.com/hc/en-us/articles/360013708460-Yubico-Login-for-Windows-Configuration-Guide) and set up second factor authentication for your Windows computer.
 
 ### macOS
 
@@ -160,7 +160,7 @@ The `pam_u2f` module on Linux can provide two factor authentication for user log
 
 ### Qubes OS
 
-Qubes OS has support for Challenge-Response (HOTP) authentication with Yubikeys. If you have a Yubikey with HOTP support, we highly recommend that you follow [Qubes OS's documentation](https://www.qubes-os.org/doc/yubikey/) and setup second factor authentication for your Qubes OS machine.
+Qubes OS has support for Challenge-Response authentication with Yubikeys. If you have a Yubikey with Challenge-Response authentication support, we highly recommend that you follow [Qubes OS's documentation](https://www.qubes-os.org/doc/yubikey/) and setup second factor authentication for your Qubes OS machine.
 
 ### SSH
 
@@ -169,5 +169,8 @@ SSH 2FA could be set up using multiple different authentication methods that are
 
 #### Time-based One-time Password (TOTP)
 SSH 2FA can also be set up using TOTP. We recommend that you follow Digital Ocean's [documentation](https://www.digitalocean.com/community/tutorials/how-to-set-up-multi-factor-authentication-for-ssh-on-ubuntu-16-04) on how to set this up.
+
+### Keepass Databases
+Keepass databases could be secured using Challenge-Response or HOTP as a second factor authentication. We recommend that you follow Yubico's [documentation](https://support.yubico.com/hc/en-us/articles/360013779759-Using-Your-YubiKey-with-KeePass) on how to set this up.
 
 
