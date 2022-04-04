@@ -151,3 +151,9 @@ A detailed guide on how to set this up with a Yubikey can be found [here](https:
 
 After your smartcard/security key is set up, we highly recommend running `sudo defaults write /Library/Preferences/com.apple.loginwindow DisableFDEAutoLogin -bool YES` in the terminal to prevent the 2FA bypass when the computer boots up.
 
+### Linux 
+
+The pam_u2f module on Linux can provide two factor authentication for user login on most popular Linux distributions. If you have a hardware security key that supports U2F, we highly recommend that you follow the [Yubico's documentation](https://developers.yubico.com/yubico-pam/) or the [Arch Linux Wiki](https://wiki.archlinux.org/title/Universal_2nd_Factor) and setup second factor authentication for your Linux machine.
+
+!!! warning
+If the hostname of your system changes (such as due to DHCP), you would be unable to login. It is vital that you setup a proper hostname for your computer before following these guides.
